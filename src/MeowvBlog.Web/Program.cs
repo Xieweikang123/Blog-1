@@ -36,6 +36,9 @@ namespace MeowvBlog.Web
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
+                //endpoints.MapControllerRoute(
+                //  name: "default",
+                //  pattern: "{controller=Hom112e}/{action=Index1}/{id?}");
                 endpoints.MapControllers();
                 endpoints.MapHub<ConnectionHub>("/connection");
             });

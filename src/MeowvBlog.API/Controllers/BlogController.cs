@@ -362,7 +362,7 @@ namespace MeowvBlog.API.Controllers
                 new XDeclaration(version: "2.0", encoding: "utf-8", standalone: "no"),
                 new XElement("rss", new XAttribute("version", "2.0"),
                     new XElement("channel",
-                        new XElement("title", "阿星Plus"),
+                        new XElement("title", "超威蓝猫"),
                         new XElement("description", "生命不息，奋斗不止"),
                         new XElement("link", "https://meowv.com"),
 

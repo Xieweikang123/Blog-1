@@ -34,7 +34,7 @@ namespace MeowvBlog.API.Swagger
                 OpenApiInfo = new OpenApiInfo
                 {
                     Version = version,
-                    Title = "阿星Plus - 博客前台接口",
+                    Title = "超威蓝猫 - 博客前台接口",
                     Description = description
                 }
             },
@@ -45,7 +45,7 @@ namespace MeowvBlog.API.Swagger
                 OpenApiInfo = new OpenApiInfo
                 {
                     Version = version,
-                    Title = "阿星Plus - 博客后台接口",
+                    Title = "超威蓝猫 - 博客后台接口",
                     Description = description
                 }
             },
@@ -56,7 +56,7 @@ namespace MeowvBlog.API.Swagger
                 OpenApiInfo = new OpenApiInfo
                 {
                     Version = version,
-                    Title = "阿星Plus - 通用公共接口",
+                    Title = "超威蓝猫 - 通用公共接口",
                     Description = description
                 }
             }
@@ -122,7 +122,7 @@ namespace MeowvBlog.API.Swagger
                 // API前缀设置为空
                 options.RoutePrefix = string.Empty;
                 // API页面Title
-                options.DocumentTitle = "😍接口文档 - 阿星Plus⭐⭐⭐";
+                options.DocumentTitle = "😍接口文档 - 超威蓝猫⭐⭐⭐";
             });
         }
     }
