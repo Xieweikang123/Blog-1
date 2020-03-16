@@ -29,6 +29,7 @@ namespace MeowvBlog.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Route("GetRandomChickenSoup")]
         public async Task<Response<string>> GetRandomChickenSoupAsync()
         {
             var response = new Response<string>();
@@ -46,6 +47,7 @@ namespace MeowvBlog.API.Controllers
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
+        [Route("InsertChickenSoup")]
         [HttpPost]
         [Authorize]
         public async Task<Response<string>> InsertChickenSoupAsync([FromBody] IList<string> list)

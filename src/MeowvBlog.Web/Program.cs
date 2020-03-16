@@ -26,10 +26,13 @@ namespace MeowvBlog.Web
             services.AddControllersWithViews();
             services.AddSignalR();
             services.AddSingleton(HtmlEncoder.Create(new[] { UnicodeRanges.BasicLatin, UnicodeRanges.CjkUnifiedIdeographs }));
+
         }
 
         public void Configure(IApplicationBuilder app)
         {
+         
+
             app.UseStatusCodePages();
             app.UseHttpsRedirection();
             app.UseStaticFiles();

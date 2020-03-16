@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
@@ -59,6 +60,10 @@ namespace MeowvBlog.Web
             });
             // Swagger扩展
             services.AddSwagger();
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen();
+
             // 身份验证之JWT
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>
@@ -110,7 +115,7 @@ namespace MeowvBlog.Web
                 // 生成异常页面
                 app.UseDeveloperExceptionPage();
             }
-            
+
             // 使用HSTS的中间件，该中间件添加了严格传输安全头
             app.UseHsts();
             // 将一个内嵌定义的中间件委托添加到应用程序的请求管道中，将判断是否授权
@@ -137,7 +142,15 @@ namespace MeowvBlog.Web
             // 响应缓存
             app.UseResponseCaching();
             // 跨域
-            app.UseCors();
+            // 设置只允许特定来源可以跨域
+            app.UseCors(options =>
+            {
+                options.WithOrigins("http://localhost:5000", "http://127.0.0.1"); // 允许特定ip跨域
+                options.AllowAnyHeader();
+                options.AllowAnyMethod();
+                options.AllowCredentials();
+            });
+
             // 身份验证
             app.UseAuthentication();
             // 认证授权
@@ -148,11 +161,14 @@ namespace MeowvBlog.Web
             app.UseSwagger();
             // SwaggerUI
             app.UseSwaggerUI();
+
             // 路由映射
             app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+        {
+            endpoints.MapControllers();
+        });
+
+
         }
     }
 }

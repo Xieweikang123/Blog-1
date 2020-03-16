@@ -120,9 +120,9 @@ namespace MeowvBlog.API.Swagger
                 // API文档仅展开标记
                 options.DocExpansion(DocExpansion.List);
                 // API前缀设置为空
-                options.RoutePrefix = string.Empty;
+                options.RoutePrefix =string.Empty;
                 // API页面Title
-                options.DocumentTitle = "😍接口文档 - 超威蓝猫⭐⭐⭐";
+                options.DocumentTitle = "😺接口文档 - 超威蓝猫⭐⭐⭐";
             });
         }
     }

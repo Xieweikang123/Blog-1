@@ -1,4 +1,4 @@
-api_domain = "https://api.meowv.com";
+api_domain = "http://localhost:44388";
 var _mtac = { "performanceMonitor": 1, "senseQuery": 1 };
 (function () {
     var mta = document.createElement("script");
